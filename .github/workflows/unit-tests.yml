@@ -59,7 +59,7 @@ jobs:
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always() && github.actor != 'dependabot[bot]'
+        if: always() && github.actor != 'dependabot[bot]' && runner.os == 'Linux'
         with:
           files: |
             target/surefire-reports/**/*.xml
